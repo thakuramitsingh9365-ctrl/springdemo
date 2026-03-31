@@ -1,0 +1,19 @@
+package live.learnwithchampak.demo.controller;
+
+public class UserResponse {
+  private String message;
+  private String status;
+
+  public UserResponse(String message, String status){
+    this.message=message;
+    this.status=status;
+  }
+
+  public String getMessage(){
+    return message;
+  }
+
+  public String getStatus(){
+    return "Amit";
+  }
+}
