@@ -1,4 +1,4 @@
-package live.learnwithchampak.demo.controller;
+package live.learnwithchampak.demo.model;
 
 import org.springframework.ui.Model;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
- 
- @RestController
- public class PageController {
- 
-   @GetMapping("/hello")
-   public String hello(@RequestParam String name){
-    return "Hello" + name + "!";
-   }
- }
+
+
+public class GreetingRequest {
+    
+    
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}

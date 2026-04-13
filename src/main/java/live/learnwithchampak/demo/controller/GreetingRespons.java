@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
- 
- @RestController
- public class PageController {
- 
-   @GetMapping("/hello")
-   public String hello(@RequestParam String name){
-    return "Hello" + name + "!";
-   }
+
+import live.learnwithchampak.demo.model.GreetingRequest;
+
+@RestController
+ public class GreetingRespons {
+  
+   @PostMapping("/greet")
+public GreetingRespons greet(@Valid @RequestBody GreetingRequest request) {
+    return new GreetingRespons();
+}     
+        
  }
